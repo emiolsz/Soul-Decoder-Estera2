@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><meta name="description" content="Soul Decoder Estera — raport osobisty i architektura relacji.">
+  <title>Soul Decoder Estera — Architektura Kodu Duszy</title>
+  <link rel="stylesheet" href="style.css"><script type="module" src="app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Przejdź do treści</a>
+  <header class="site-header">
+    <a class="brand" href="#oferty" aria-label="Soul Decoder — strona główna">
+      <img class="brand-logo" src="assets/graphics/logo-gold-v2.png" alt="Soul Decoder Estera" width="2048" height="688">
+    </a>
+    <nav aria-label="Nawigacja główna">
+      <a href="#oferty">Raporty</a><a href="#zawartosc">O raporcie</a><a href="#metodyka">Jak liczymy</a><a href="#estera">Pracownia</a><a href="#kontakt">Kontakt</a>
+    </nav>
+    
+  </header>
+  <main id="main">
+    <section id="view-offers" class="view wrap">
+      <div class="intro"><p class="eyebrow">ARCHITEKTURA KODU DUSZY</p><h1 id="site-headline">Odkryj architekturę swojego kodu duszy.</h1><p id="site-intro" class="lead"></p></div>
+      <div id="offers" class="offers" aria-label="Sześć raportów Soul Decoder"></div>
+      <div class="quiet-note">Twój kod jest początkiem. Relacje otwierają kolejne warstwy historii.</div>
+    </section>
+
+
+
+    <section id="view-contact" class="view wrap" hidden>
+      <a class="back" href="#oferty">← Wszystkie raporty</a>
+      <div class="intro compact"><p class="eyebrow">NAPISZ DO PRACOWNI</p><h1>Kontakt</h1><p class="lead">Masz pytanie o raporty lub Pracownię Estery?</p></div>
+      <form id="contact-form" class="form-panel contact-form">
+        <label for="contact-name">Imię</label><input id="contact-name" name="name" autocomplete="given-name" maxlength="80" required>
+        <label for="contact-email">Adres e-mail do odpowiedzi</label><input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+        <label for="contact-message">Wiadomość</label><textarea id="contact-message" name="message" rows="7" maxlength="5000" required></textarea>
+        <div class="spam-trap" aria-hidden="true"><label for="contact-website">Strona internetowa</label><input id="contact-website" name="website" tabindex="-1" autocomplete="off"></div>
+        <p class="form-note" role="status">Formularz kontaktowy będzie dostępny po uruchomieniu obsługi wiadomości.</p>
+        <button class="button primary" type="submit" disabled>Wyślij wiadomość</button>
+      </form>
+      <div id="company-details" class="report-reading" hidden><h2>Dane podmiotu</h2><div id="company-content"></div></div>
+    </section>
+    <section id="view-estera" class="view wrap" hidden>
+      <a class="back" href="#oferty">← Wszystkie raporty</a>
+      <div class="intro compact"><p class="eyebrow">LIST DO CIEBIE</p><h1 id="estera-title">Pracownia Estery</h1></div>
+      <img id="estera-photo" class="estera-photo" alt="Pracownia Estery" hidden>
+      <div id="estera-letter" class="report-reading"></div>
+      <p class="estera-signature" aria-label="Podpis: Estera">Estera</p>
+    </section>
+    <section id="view-about" class="view wrap" hidden>
+      <a class="back" href="#oferty">← Wszystkie raporty</a>
+      <div class="intro compact"><p class="eyebrow">BEZPŁATNY RAPORT OSOBISTY</p><h1>Co znajdziesz w Kodzie Duszy?</h1><p class="lead">Sześć wartości wyliczonych z daty urodzenia oraz ich autorska, symboliczna interpretacja.</p></div>
+      <div class="report-reading"><h2>Sześć obszarów profilu</h2><ul>
+        <li><strong>Dar</strong> — interpretacja Twoich naturalnych zasobów.</li>
+        <li><strong>Karma</strong> — tematy wyzwań i powracających lekcji.</li>
+        <li><strong>Głęboka osobowość</strong> — wewnętrzna struktura profilu.</li>
+        <li><strong>Talent / Kreacja</strong> — potencjał twórczy i sposób jego wyrażania.</li>
+        <li><strong>Węzeł oporu</strong> — obszary napięcia i pracy nad sobą.</li>
+        <li><strong>Tikkun</strong> — temat integracji i osobistej przemiany.</li>
+      </ul><h2>Twój raport</h2><p>Każdy obszar zawiera wartość, przypisaną literę, wprowadzenie i opis dobrany do wyniku. Raport obejmuje też wprowadzenie do Architektury Duszy oraz końcową syntezę. Możesz przeczytać go na stronie i pobrać jako PDF.</p><p>To autorskie narzędzie symbolicznej refleksji nad sobą. Interpretacje nie są diagnozą ani przepowiednią.</p></div>
+      <a class="button primary" href="#osobisty">Odkryj swój bezpłatny profil →</a>
+    </section>
+    <section id="view-method" class="view wrap" hidden>
+      <a class="back" href="#oferty">← Wszystkie raporty</a>
+      <div class="intro compact"><p class="eyebrow">OD DATY DO PROFILU</p><h1>Jak powstają wartości raportu?</h1><p class="lead">Przykład demonstracyjny dla daty 14.03.1990. Nie przedstawia raportu rzeczywistej osoby.</p></div>
+      <div class="report-reading"><p>Obliczenia korzystają z dnia, miesiąca oraz sumy cyfr roku urodzenia. Wartości profilu mieszczą się w zakresie 1–22. Wyniki przekraczające 22 są redukowane zgodnie z regułami systemu.</p>
+      <table><thead><tr><th>Obszar</th><th>Przykład obliczenia</th><th>Wynik</th></tr></thead><tbody>
+      <tr><td>Dar</td><td>Dzień urodzenia</td><td>14</td></tr>
+      <tr><td>Karma</td><td>Miesiąc urodzenia</td><td>3</td></tr>
+      <tr><td>Głęboka osobowość</td><td>1 + 9 + 9 + 0</td><td>19</td></tr>
+      <tr><td>Talent / Kreacja</td><td>Suma cyfr osobowości: 1 + 9</td><td>10</td></tr>
+      <tr><td>Węzeł oporu</td><td>Największa z wartości 14, 3, 19 minus Karma: 19 − 3</td><td>16</td></tr>
+      <tr><td>Tikkun</td><td>Wartość bezwzględna różnicy Węzła i Daru: |16 − 14|</td><td>2</td></tr>
+      </tbody></table><p>Suma cyfr roku wynosi tutaj 19 i zostaje zachowana, ponieważ nie przekracza 22. Osobno sumujemy jej cyfry, aby otrzymać Talent.</p><p>Do wyników generator dobiera opisy z autorskiej bazy interpretacji. Sama data wyznacza liczby; tekst nadaje im znaczenie w ramach tego systemu.</p></div>
+    </section>
+    <section id="view-personal" class="view wrap" hidden>
+      <a class="back" href="#oferty">← Wszystkie raporty</a>
+      <p class="notice">Projekt wizualny do oceny. Najpierw ustalamy wygląd strony i analizy; silnik oraz treści pozostają wersją roboczą.</p><div class="intro compact"><p class="eyebrow">TWÓJ BEZPŁATNY RAPORT</p><h1>Kod Duszy • Raport osobisty</h1><p class="lead">Podaj swoje imię i datę urodzenia. Poznaj sześć parametrów swojej architektury i przeczytaj raport przed pobraniem.</p></div>
+      <div class="workspace">
+        <aside class="form-panel">
+          <h2>Twój profil</h2>
+          <form id="profile-form" novalidate>
+            <label for="person-name">Imię <span aria-hidden="true">*</span></label><input id="person-name" name="imie" autocomplete="given-name" maxlength="80" placeholder="Twoje imię" required>
+            <label for="person-status">Status osoby <span aria-hidden="true">*</span></label>
+            <select id="person-status" required><option value="">Wybierz status</option><option value="living">Osoba żyjąca</option><option value="deceased">Osoba nieżyjąca</option></select>
+            <label for="birth-date">Data urodzenia <span aria-hidden="true">*</span></label><input id="birth-date" name="data_urodzenia" type="date" required>
+<label class="email-choice"><input id="email-request" type="checkbox"> Chcę otrzymać wygenerowany raport na adres e-mail.</label>
+            <div id="email-options" hidden>
+            <label for="report-email">Raport prześlij na adres</label>
+            <input id="report-email" name="email" type="email" autocomplete="email" placeholder="twoj@email.pl" aria-describedby="email-status" disabled>
+            <p id="email-status" class="form-note">Wysyłka e-mail jest w przygotowaniu. Raport możesz obecnie przeczytać tutaj i pobrać jako PDF.</p>
+            </div>
+            <div id="deceased-note" class="notice" hidden>Raport bezpłatny jest przeznaczony dla osoby żyjącej. Posag i data odejścia należą do osobnej analizy rodowej. <a href="#raport/kronika">Zobacz Kronikę Geometrii Rodowej →</a></div>
+            <p id="form-error" class="error" role="alert" hidden></p>
+            <button id="calculate-button" class="button primary full" type="submit">Odkryj mój kod <span>→</span></button>
+          </form>
+          <p class="form-note">Imię i data są używane w tej karcie przeglądarki. Nie zapisujemy ich w adresie ani w historii profili.</p>
+        </aside>
+        <div class="results-panel">
+          <div id="empty-result" class="empty-result"><div class="empty-symbol" aria-hidden="true">✧</div><h2>Sześć punktów. Jedna architektura.</h2><p>Twój raport pojawi się tutaj po analizie daty urodzenia.</p><span>DAR · KARMA · OSOBOWOŚĆ · TALENT · WĘZEŁ · TIKKUN</span></div>
+          <div id="result" hidden>
+            <div class="result-heading"><div><p class="eyebrow">TWOJA ARCHITEKTURA</p><h2 id="result-title"></h2></div><span class="pill">Raport bezpłatny</span></div>
+            <div id="metrics" class="metrics"></div>
+            <div class="tabs" role="tablist" aria-label="Wyniki analizy"><button id="steps-tab" role="tab" aria-selected="true" aria-controls="steps-panel" class="active" type="button">Obliczenia krok po kroku</button><button id="report-tab" role="tab" aria-selected="false" aria-controls="report-panel" type="button">Podgląd raportu</button></div>
+            <div id="steps-panel" role="tabpanel" aria-labelledby="steps-tab"><div class="rule"><strong>Reguła roku</strong><span>Sumę cyfr roku redukujemy tylko wtedy, gdy przekracza 22.</span></div><ol id="steps" class="steps"></ol><p class="form-note">Talent i Dar są odrębnymi pozycjami. W profilu osoby żyjącej różnica 0 przechodzi w 22; nie jest wynikiem analizy przejścia.</p><button id="preview-button" class="button primary" type="button">Przeczytaj mój raport →</button></div>
+            <div id="report-panel" role="tabpanel" aria-labelledby="report-tab" hidden><div class="report-toolbar"><span id="pdf-status" role="status"></span><button id="download-button" class="button primary small" type="button" disabled>Pobierz PDF ↓</button></div><div id="report-reading" class="report-reading"></div><details class="pdf-details"><summary>Podgląd pliku PDF w układzie do pobrania</summary><iframe id="pdf-preview" title="Podgląd wygenerowanego raportu PDF"></iframe><p class="form-note">Jeśli przeglądarka nie pokazuje PDF, raport możesz przeczytać powyżej lub pobrać przyciskiem.</p></details></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="view-product" class="view wrap" hidden><a class="back" href="#oferty">← Wszystkie raporty</a><div class="product-detail"><div id="product-art"></div><div><p id="product-kind" class="eyebrow"></p><h1 id="product-title"></h1><p id="product-subtitle" class="lead"></p><p id="product-description"></p><p id="product-status" class="notice"></p><a id="naffy-link" class="button primary" target="_blank" rel="noopener noreferrer" hidden>Zobacz ofertę w Naffy →</a></div></div></section>
+<noscript><p class="notice">Do obliczeń i generowania raportu potrzebny jest JavaScript. Włącz go w przeglądarce.</p></noscript>
+    <p id="global-error" class="error wrap" role="alert" hidden></p>
+  </main>
+  <footer><div class="wrap footer-content"><span>SOUL DECODER ESTERA</span><p>Geometria kodu. Perspektywa prawdy.</p><small>© 2026 • Soul Decoder Estera. Wszelkie prawa zastrzeżone · <a href="/pracownia" style="font-size:inherit">Administracja</a></small></div></footer>
+</body>
+</html>

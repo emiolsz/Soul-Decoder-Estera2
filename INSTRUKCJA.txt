@@ -1,0 +1,62 @@
+PRACOWNIA ESTERY ONLINE — WDROŻENIE W OBECNYM PROJEKCIE FLASK
+
+PRZYGOTOWANE
+Logowanie adres e-mail + hasło z kont utworzonych w Supabase.
+Administrator: emikon888@gmail.com. Redaktor: mojedwie@gmail.com.
+Opisy: wersja robocza dla redaktorów; publikowanie przez administratora.
+Raporty: edycja tekstu, PDF i trwały zapis raportu w bazie; otwieranie na innych urządzeniach.
+Materiały źródłowe: dostępne po zalogowaniu.
+Uprawnienia: zmiana roli istniejących kont, odebranie dostępu i dodanie redaktora przez User UID.
+
+1. SUPABASE
+Otwórz setup/02_pracownia.sql w zwykłym edytorze tekstu.
+Skopiuj CAŁY tekst, wklej do Supabase → SQL Editor → New query i kliknij Run.
+To rozszerza już istniejącą tabelę ról, bez usuwania kont. Można wykonać ponownie.
+Wynik: „Pracownia gotowa”.
+
+2. GITHUB
+Repozytorium MUSI być prywatne, ponieważ zawiera prywatne materiały źródłowe.
+GitHub → repozytorium → Settings → General → Danger Zone → Change repository visibility → Private.
+Przed zmianą plików zachowaj kopię obecnej wersji (Code → Download ZIP).
+Podmień zawartość repozytorium na pliki i foldery z tej paczki (bez samego ZIP-a).
+Usuń stare vercel.json, index.html, dist i administracja-lokalna, jeśli pozostały po poprzednich paczkach.
+Najważniejsze pliki w głównym katalogu: app.py, requirements.txt, vercel.json, login.html, login.mjs.
+Foldery public_site, private_workshop i private_materials zachowaj w całości.
+Wszystkie prywatne materiały są serwowane przez Flask dopiero po sprawdzeniu konta i roli.
+Nie dodawaj hasła do bazy ani klucza Secret do plików.
+Jeżeli pliki prywatne były wcześniej w publicznym repozytorium, zmiana widoczności nie cofnie wcześniejszego dostępu.
+
+3. VERCEL
+Pozostaw obecny projekt soul-decoder-estera i połączenie z GitHub.
+Settings → Environment Variables (już dodane):
+SUPABASE_URL = https://cpewxvpygbivxnacymtn.supabase.co
+SUPABASE_PUBLISHABLE_KEY = Twój sb_publishable_...
+Środowisko Production. Nie potrzeba klucza Secret ani nowego hasła.
+Settings → Build and Deployment: Framework Preset Flask; Root Directory pusty;
+usuń ewentualne nadpisania Build Command i Output Directory (dla Flask Output może pokazywać N/A).
+Po zapisaniu plików w GitHub Vercel powinien wdrożyć je automatycznie.
+Jeżeli automatyczne wdrożenie rozpoczęło się przed zakończeniem ustawień: Deployments → najnowsza wersja → Redeploy.
+
+4. WEJŚCIE
+Strona publiczna: https://soul-decoder-estera.vercel.app/
+Pracownia: https://soul-decoder-estera.vercel.app/pracownia
+Zaloguj się adresem i hasłem konta utworzonego w Supabase (nie hasłem do bazy).
+Zalogowana pracownia otwiera się pod /pracownia/panel.
+Na wspólnym komputerze zawsze kliknij Wyloguj.
+
+5. PRACA
+Po zmianie opisów kliknij „Zapisz wersję roboczą w chmurze”.
+Aby klienci zobaczyli zmianę, administrator klika „Opublikuj opisy na stronie”.
+Przed opuszczeniem raportu kliknij „Zapisz ten raport w chmurze”.
+Zapisane raporty i materiały otworzysz z rozwijanej sekcji nad pracownią.
+Nie edytujcie tej samej wersji opisów jednocześnie: zapis późniejszy zastępuje wcześniejszy.
+Nowe konto tworzysz w Supabase; potem w pracowni nadajesz mu rolę przez User UID.
+Twojego osobistego raportu i danych przykładowych nie ma na stronie publicznej.
+Materiały źródłowe aktualizuje administrator przez prywatne repozytorium.
+
+6. ZAKRES I SPRAWDZENIE
+Testy lokalne sprawdziły blokady dostępu, rozdział ról, odnowienie sesji, składnię SQL i generator raportów.
+Nie wykonano jeszcze wdrożenia ani testu z rzeczywistym projektem Supabase — sprawdzimy je po wgraniu.
+Formularz kontaktowy i wysyłka raportów e-mailem pozostają nieaktywne.
+Linki Naffy działają po wpisaniu linków ofert; automatyczne potwierdzanie płatności nie jest podłączone.
+Finalny skład raportów do druku pozostaje osobnym etapem.

@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import {calculate} from '../dist/calculator.mjs';
+import {makeReport} from '../dist/report.mjs';
+import {makeRelationReport} from '../dist/lineage.mjs';
+import {buildPDF} from '../dist/pdf.mjs';
+const root=new URL('../',import.meta.url),data=JSON.parse(fs.readFileSync(new URL('dist/assets/report-content.json',root))),font=fs.readFileSync(new URL('dist/assets/report-font.ttf',root)),metrics=JSON.parse(fs.readFileSync(new URL('dist/assets/font-metrics.json',root)));
+const dir=process.argv[2];fs.mkdirSync(dir,{recursive:true});
+const bold={bytes:fs.readFileSync(new URL('dist/assets/report-font-bold.ttf',root)),metrics:JSON.parse(fs.readFileSync(new URL('dist/assets/font-bold-metrics.json',root)))};
+const sample=makeReport('Emilia','1974-11-06',calculate('1974-11-06'),data,data.report),output=buildPDF(sample,font,metrics,bold);fs.writeFileSync(`${dir}/personal-test.pdf`,output.bytes);
+const child=makeRelationReport(data.products[2],[{id:'a',name:'Maria',birth:'1974-11-06',status:'living',relation:'Matka'},{id:'b',name:'Dziecko',birth:'2000-02-01',death:'2000-02-01',status:'deceased',relation:'Dziecko'}],data);const legacy=buildPDF(child,font,metrics,bold);fs.writeFileSync(`${dir}/same-day-test.pdf`,legacy.bytes);
+console.log(JSON.stringify({personalPages:output.pageCount,relationPages:legacy.pageCount}));

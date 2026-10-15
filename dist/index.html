@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><meta name="description" content="Soul Decoder Estera — raport osobisty i architektura relacji.">
+  <title>Soul Decoder Estera — Architektura Kodu Duszy</title>
+  <link rel="stylesheet" href="style.css"><script type="module" src="app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Przejdź do treści</a>
+  <header class="site-header">
+    <a class="brand" href="#oferty" aria-label="Soul Decoder — strona główna">
+      <img class="brand-logo" src="assets/graphics/logo-gold-v2.png" alt="Soul Decoder Estera" width="2048" height="688">
+    </a>
+    <nav aria-label="Nawigacja główna">
+      <a href="#oferty">Raporty</a><a href="#osobisty">Profil</a><a href="#metodyka">Metodyka</a>
+    </nav>
+    <a class="button small outline" href="#redakcja">Pracownia opisów</a>
+  </header>
+  <div class="private-strip"><span class="dot"></span> Prywatny projekt wyglądu <span>• Dostęp właścicielki</span></div>
+  <main id="main">
+    <section id="view-offers" class="view wrap">
+      <div class="intro"><p class="eyebrow">ARCHITEKTURA KODU DUSZY</p><h1 id="site-headline">Odkryj architekturę swojego kodu duszy.</h1><p id="site-intro" class="lead"></p></div>
+      <div class="shop-actions"><a class="button outline" href="#osobisty"><span>✧</span> Odkryj swój bezpłatny profil</a><a class="button outline" href="#metodyka"><span>≡</span> Zobacz, jak powstaje Twój kod</a></div>
+      <div id="offers" class="offers" aria-label="Sześć raportów Soul Decoder"></div>
+      <div class="quiet-note">Twój kod jest początkiem. Relacje otwierają kolejne warstwy historii.</div>
+    </section>
+    <section id="view-personal" class="view wrap" hidden>
+      <a class="back" href="#oferty">← Wszystkie raporty</a>
+      <p class="notice">Projekt wizualny do oceny. Najpierw ustalamy wygląd strony i analizy; silnik oraz treści pozostają wersją roboczą.</p><div class="intro compact"><p class="eyebrow">TWÓJ BEZPŁATNY RAPORT</p><h1>Kod Duszy • Raport osobisty</h1><p class="lead">Podaj swoje imię i datę urodzenia. Poznaj sześć parametrów swojej architektury i przeczytaj raport przed pobraniem.</p></div>
+      <div class="workspace">
+        <aside class="form-panel">
+          <h2>Twój profil</h2>
+          <form id="profile-form" novalidate>
+            <label for="person-name">Imię <span aria-hidden="true">*</span></label><input id="person-name" name="imie" autocomplete="given-name" maxlength="80" placeholder="Twoje imię" required>
+            <label for="person-status">Status osoby <span aria-hidden="true">*</span></label>
+            <select id="person-status" required><option value="">Wybierz status</option><option value="living">Osoba żyjąca</option><option value="deceased">Osoba nieżyjąca</option></select>
+            <label for="birth-date">Data urodzenia <span aria-hidden="true">*</span></label><input id="birth-date" name="data_urodzenia" type="date" required>
+            <div id="deceased-note" class="notice" hidden>Raport bezpłatny jest przeznaczony dla osoby żyjącej. Posag i data odejścia należą do osobnej analizy rodowej. <a href="#raport/kronika">Zobacz Kronikę Geometrii Rodowej →</a></div>
+            <p id="form-error" class="error" role="alert" hidden></p>
+            <button id="calculate-button" class="button primary full" type="submit">Odkryj mój kod <span>→</span></button>
+          </form>
+          <button id="example-button" class="text-button" type="button">Wczytaj przykład: Emilia, 06.11.1974</button>
+          <p class="form-note">Imię i data są używane w tej karcie przeglądarki. Nie zapisujemy ich w adresie ani w historii profili.</p>
+        </aside>
+        <div class="results-panel">
+          <div id="empty-result" class="empty-result"><div class="empty-symbol" aria-hidden="true">✧</div><h2>Sześć punktów. Jedna architektura.</h2><p>Twój raport pojawi się tutaj po analizie daty urodzenia.</p><span>DAR · KARMA · OSOBOWOŚĆ · TALENT · WĘZEŁ · TIKKUN</span></div>
+          <div id="result" hidden>
+            <div class="result-heading"><div><p class="eyebrow">TWOJA ARCHITEKTURA</p><h2 id="result-title"></h2></div><span class="pill">Raport bezpłatny</span></div>
+            <div id="metrics" class="metrics"></div>
+            <div class="tabs" role="tablist" aria-label="Wyniki analizy"><button id="steps-tab" role="tab" aria-selected="true" aria-controls="steps-panel" class="active" type="button">Obliczenia krok po kroku</button><button id="report-tab" role="tab" aria-selected="false" aria-controls="report-panel" type="button">Podgląd raportu</button></div>
+            <div id="steps-panel" role="tabpanel" aria-labelledby="steps-tab"><div class="rule"><strong>Reguła roku</strong><span>Sumę cyfr roku redukujemy tylko wtedy, gdy przekracza 22.</span></div><ol id="steps" class="steps"></ol><p class="form-note">Talent i Dar są odrębnymi pozycjami. W profilu osoby żyjącej różnica 0 przechodzi w 22; nie jest wynikiem analizy przejścia.</p><button id="preview-button" class="button primary" type="button">Przeczytaj mój raport →</button></div>
+            <div id="report-panel" role="tabpanel" aria-labelledby="report-tab" hidden><div class="report-toolbar"><span id="pdf-status" role="status"></span><button id="download-button" class="button primary small" type="button" disabled>Pobierz PDF ↓</button></div><div id="report-reading" class="report-reading"></div><details class="pdf-details"><summary>Podgląd pliku PDF w układzie do pobrania</summary><iframe id="pdf-preview" title="Podgląd wygenerowanego raportu PDF"></iframe><p class="form-note">Jeśli przeglądarka nie pokazuje PDF, raport możesz przeczytać powyżej lub pobrać przyciskiem.</p></details></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="view-product" class="view wrap" hidden><a class="back" href="#oferty">← Wszystkie raporty</a><div class="product-detail"><div id="product-art"></div><div><p id="product-kind" class="eyebrow"></p><h1 id="product-title"></h1><p id="product-subtitle" class="lead"></p><p id="product-description"></p><p id="product-status" class="notice"></p><a id="naffy-link" class="button primary" target="_blank" rel="noopener noreferrer" hidden>Zobacz ofertę w Naffy →</a><button id="open-relation" class="button outline" type="button">Sprawdź raport w prywatnym panelu →</button></div></div><div id="relation-builder" hidden><h2 id="relation-title">Osoby w analizie</h2><p class="notice">Prywatny test generatora. Raporty płatne nie są jeszcze uruchomione w sprzedaży. Dla osób nieżyjących obliczamy obie metody posagu osobno, z opisem dobranym do wieku w chwili odejścia.</p><form id="relation-form" novalidate><div id="relation-people"></div><div class="relation-actions"><button id="add-person" class="button outline" type="button">Dodaj osobę +</button><button class="button primary" type="submit">Wygeneruj podgląd analizy →</button></div><p id="relation-error" class="error" role="alert" hidden></p></form><div id="relation-output" hidden><div class="report-toolbar"><span id="relation-pdf-status" role="status"></span><button id="relation-download" class="button primary small" type="button">Pobierz PDF ↓</button></div><div id="relation-reading" class="report-reading"></div><details class="pdf-details"><summary>Podgląd pliku PDF</summary><iframe id="relation-pdf" title="Podgląd PDF analizy relacji"></iframe></details></div></div></section>
+    <section id="view-method" class="view wrap" hidden><a class="back" href="#oferty">← Wszystkie raporty</a><div class="intro compact"><p class="eyebrow">PRYWATNA PRACOWNIA</p><h1>Metodyka pod kontrolą</h1><p class="lead">Stałe przypadki kontrolne pomagają zauważyć zmianę pierwotnych obliczeń.</p></div><div class="method-rule"><h2>Rok nie jest redukowany do jednej cyfry.</h2><p>1974 → 1 + 9 + 7 + 4 = 21. Ponieważ 21 ≤ 22, osobowość pozostaje 21. Dopiero dla Talentu: 2 + 1 = 3.</p></div><div class="control-header"><h2>Przypadki kontrolne</h2><span id="control-status" class="pill" role="status"></span><button id="rerun-controls" class="button outline small" type="button">Sprawdź ponownie</button></div><p class="form-note">Wyniki w kolejności: Dar / Karma / Osobowość / Talent / Węzeł / Tikkun. Kliknij przykład, aby prześledzić go w formularzu.</p><div id="controls" class="controls"></div><h2>Kontrola obu metod posagu</h2><p class="form-note">Wibracja narodzin / odejścia / różnica (metoda 1) / rok osobisty / dzień i miesiąc odejścia / wynik metody 2. Brak warunku 9–9 oznacza brak wyniku zero w metodzie 2.</p><div id="posag-controls" class="controls"></div><p class="notice">Profil urodzenia zachowuje 22 wartości. Obie metody posagu są obliczane osobno; wiek zmienia język interpretacji, a nie liczby.</p></section>
+    <section id="view-editor" class="view wrap" hidden><a class="back" href="#oferty">← Wszystkie raporty</a><div class="intro compact"><p class="eyebrow">PRYWATNA PRACOWNIA</p><h1>Twoje słowa. Twoja redakcja.</h1><p class="lead">Wybierz opis, zmień tekst i sprawdź go w raporcie. Algorytm obliczeń pozostaje niezależny od redakcji.</p></div>
+      <div class="editor-top"><button id="export-content" class="button primary" type="button">Pobierz aktualne opisy ↓</button><label class="button outline" for="import-content">Wczytaj plik opisów<input id="import-content" type="file" accept="application/json,.json" hidden></label><button id="reset-content" class="button outline" type="button">Przywróć opisy źródłowe</button></div>
+      <p class="notice">Zmiany zapisujesz w tej przeglądarce. Aby udostępnić je w kolejnej wersji strony, pobierz plik <strong>report-content.json</strong>, podmień go w folderze <strong>dist/assets</strong> repozytorium i wdroż stronę ponownie.</p>
+      <div class="editor-layout"><aside class="form-panel"><label for="editor-area">Co chcesz edytować?</label><select id="editor-area"><option value="report">Opisy raportu</option><option value="inheritance">Posag i kontekst wieku</option><option value="offers">Kafelki i linki Naffy</option><option value="site">Tekst strony</option></select>
+        <div id="report-selectors"><label for="editor-section">Sekcja</label><select id="editor-section"><option value="introduction">Architektura Duszy — wprowadzenie</option><option value="Prawa">Dar</option><option value="Lewa">Karma</option><option value="Gleboka">Głęboka osobowość</option><option value="Talent">Talent / Kreacja</option><option value="Wezel">Węzeł oporu</option><option value="Tikkun">Tikkun</option><option value="synthesis">Synteza raportu</option><option value="quote">Cytat na okładce</option></select>
+        <div id="editor-type-wrap"><label for="editor-type">Rodzaj opisu</label><select id="editor-type"><option value="introduction">Tekst stały</option><option value="extended">Interpretacja konkretnej wibracji</option></select></div>
+        <div id="editor-number-wrap" hidden><label for="editor-number">Wibracja</label><select id="editor-number"></select></div>
+        <div id="variant-wrap" hidden><label for="tikkun-variant">Wariant tekstu do redakcji</label><select id="tikkun-variant"><option value="expanded">Rozbudowana</option><option value="original">Opis pierwotny</option></select><p class="form-note">W źródłowym DOCX występują dwie wersje, także z różnymi literami przy części liczb. Generator korzysta z wersji rozbudowanej. Przełącznik służy tylko do redakcji obu zachowanych tekstów; nie zmienia reguł generatora.</p></div>
+        </div><div id="age-selectors" hidden><label for="editor-age">Kontekst wieku</label><select id="editor-age"><option value="sameDay">Odejście w dniu narodzin</option><option value="0-6">0–6 lat</option><option value="7-15">7–15 lat</option><option value="16-21">16–21 lat</option><option value="22-39">22–39 lat</option><option value="40-59">40–59 lat</option><option value="60-79">60–79 lat</option><option value="80+">80+ lat</option></select><label for="editor-age-number">Wartość posagu</label><select id="editor-age-number"></select></div><div id="offer-selectors" hidden><label for="editor-offer">Oferta</label><select id="editor-offer"></select></div>
+      </aside><div class="editor-body"><h2 id="editor-title"></h2><p id="editor-source" class="form-note"></p>
+        <div id="text-editor"><label for="editor-text">Treść <small>Oddziel akapity pustą linią.</small></label><textarea id="editor-text" rows="18" spellcheck="true"></textarea><div id="letter-editor" hidden class="two-fields"><div><label for="editor-letter-name">Nazwa litery</label><input id="editor-letter-name" readonly></div><div><label for="editor-letter-symbol">Znak</label><input id="editor-letter-symbol" readonly maxlength="20"></div></div></div>
+        <div id="offer-editor" hidden><label for="offer-title">Nazwa kafelka</label><input id="offer-title"><label for="offer-subtitle">Podtytuł</label><input id="offer-subtitle"><label for="offer-description">Opis oferty</label><textarea id="offer-description" rows="6"></textarea><label for="offer-url">Link do oferty Naffy</label><input id="offer-url" type="url" placeholder="https://..."><label for="offer-status">Dostępność</label><select id="offer-status"><option value="preparing">W przygotowaniu</option><option value="ready">Dostępna — z aktywnym linkiem</option></select></div>
+        <div id="site-editor" hidden><div class="two-fields"><div><label for="theme-accent">Kolor akcentów</label><input id="theme-accent" type="color"></div><div><label for="theme-navy">Granat kafelków</label><input id="theme-navy" type="color"></div><div><label for="theme-gold">Złote detale</label><input id="theme-gold" type="color"></div><div><label for="theme-background">Tło strony</label><input id="theme-background" type="color"></div></div><label for="site-title-input">Nagłówek strony</label><input id="site-title-input"><label for="site-intro-input">Wprowadzenie</label><textarea id="site-intro-input" rows="6"></textarea></div>
+        <button id="save-description" class="button primary" type="button">Zapisz zmiany w przeglądarce</button><p id="editor-feedback" role="status"></p>
+      </div></div>
+    </section>
+    <noscript><p class="notice">Do obliczeń i generowania raportu potrzebny jest JavaScript. Włącz go w przeglądarce.</p></noscript>
+    <p id="global-error" class="error wrap" role="alert" hidden></p>
+  </main>
+  <footer><div class="wrap footer-content"><span>SOUL DECODER ESTERA</span><p>Geometria kodu. Perspektywa prawdy.</p><small>© 2026 • Projekt wizualny do oceny</small></div></footer>
+</body>
+</html>

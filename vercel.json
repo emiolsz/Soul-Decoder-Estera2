@@ -1,0 +1,1 @@
+{"framework":"flask","functions":{"app.py":{"includeFiles":"{login.html,login.mjs,public_site/**,private_workshop/**,private_materials/**}"}}}
